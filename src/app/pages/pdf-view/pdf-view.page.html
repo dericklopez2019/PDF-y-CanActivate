@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Visualizar PDF </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-button (click)="openFileInput()" >
+  Seleccionar PDF
+</ion-button>
+<input type="file" #fileInput style="display: none" (change)="loadPDF($event)" accept=".pdf">
+<div *ngIf="showPdf">
+  <ion-toolbar class="pdf-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="zoomMas()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+      <ion-button (click)="zoomMenos()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <pdf-viewer [src]="pdfSrc"
+  [render-text]="true"
+  [original-size]="false"
+  [fit-to-page]="true" [show-all]="true"
+  [zoom]="zoomLevel"
+  [page]="1"
+  style="width: 412px; height: 600px"
+  ></pdf-viewer>
+</div>
+</ion-content>

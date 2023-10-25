@@ -1,0 +1,12 @@
+[
+  {
+    "icon": "home-outline",
+    "name": "Inicio",
+    "redirectTo": "/home"
+  },
+  {
+    "icon": "document-outline",
+    "name": "Ver PDF",
+    "redirectTo": "/pdf-view"
+  }
+]
